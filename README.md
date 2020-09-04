@@ -20,10 +20,10 @@ The imporant aspects are; <u><strong>Usability</u></strong>, <u><strong>Modifiab
 <strong>Integrity/Security:</strong>Software needs to have security, if your application handles private information then secuirty is required, as well as integrity of your software, you dont want to allow people to inject SQL code into your app to break it, giving them access to admin privilidges, or you dont want malicious users to break into the database and get peoples private information. While 100% security is impossible, ensuring that you have a healthy balance between security and accessibility is optimal for your software, no-one smart would wish to buy something not from a secured website and you would be concerned with having your private information lifted and used.
       
 #### [Sources]---
-1. [label](https://www.softwaretestinghelp.com/what-are-the-quality-attributes/)
-2. [label](https://www.silasreinagel.com/blog/2016/11/15/the-seven-aspects-of-software-quality/)
-3. [label](http://www.chappellassoc.com/writing/white_papers/The_Three_Aspects_of_Software_Quality_v1.0-Chappell.pdf) 
-4. [label](https://en.wikipedia.org/wiki/Software_quality)
+1. [Softwaretestinghelp](https://www.softwaretestinghelp.com/what-are-the-quality-attributes/)
+2. [Silasreinagel](https://www.silasreinagel.com/blog/2016/11/15/the-seven-aspects-of-software-quality/)
+3. [chapellassociciates](http://www.chappellassoc.com/writing/white_papers/The_Three_Aspects_of_Software_Quality_v1.0-Chappell.pdf) 
+4. [Software Quality Wiki](https://en.wikipedia.org/wiki/Software_quality)
 ---
 
 ## Q3 |Outline a standard high level structure for a MERN stack application and explain the components.
@@ -41,9 +41,13 @@ A team that is attempting to develop a website for a small business would need t
 ---
 
 ## Q5 |With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges.
-
+Ruby, Ruby on Rails, Databases, Deployment, Git hub, Branching, Plugins/addons, Keys, MVC
+My project that I did for CoderAcademy, the rails marketplace app. To complete that assessment I had to use alot of knowledge and skills.
+Firstly I had to plan out my project using a combination of webtools / planning apps, writing out an ERD(Entity Relationship Diagram) for my ideal database and creating wireframes to have a base design for what my website will look like going forward. I also used a Trello board to plot out my process incase I get lost/ distracted.
+With the planning finished I can start the app, using knowledge of the Ruby language and the Ruby on rails to create the app and a knowledge of how Github and Git pushing to create a backup of my project going forward. My knowledge of the MVC(Model, View, Controller) and Databases will have already come in handy by this point and continue to do so. When i create the app i also set up the database for the app, I then add the datatypes from my ERD's to the database in my project. Using my knowledge and skills and what I envision the datatypes to be I can set up dependencies and "null: false" statements to ensure that certain data cant be created without other data being created at the same time. Combining my knowledge of how Databases interact with Models, followed by Controllers and finally Views. Finally being able to deploy my work to a deployment site and ensuring that it works on the app/website that I deployed it to.</br>
+While this is just a brief overview of the creation of the app it is important to state that my knowledge and skill with Ruby and Ruby on Rails, which the skill of setting objects/classes/datatypes and setting variables in order to set up working views. This also helped when referring to documentation and understanding what I was reading when it came to Ruby On Rails which took some time and practice. But it was process stated above and my the order in which I went about my tasks that was of the most benefit and left me feeling confident in how I would the project would work out. This skill and knowledge allowed me to do things like modify the class of the devise plug in to better suit my needs, adding a stripe payment API and adding Amazon Web Services(AWS) to my app. These skills helped me to overcome the challenges I faced during the project.        
 #### [Sources]---
-1. [label](link)
+1. [Self Reflection]
 ---
 
 ## Q6 |With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature.
