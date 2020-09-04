@@ -70,7 +70,13 @@ Implicit conversion is when you use the inbuilt operators of certain data types(
 Finally Objects can be type coerced inside of Javascript but normally isn't done as doing type coercion in the data within an object itself. Hash Objects {} are considered a true boolean value, when its converted to a string it becomes an array stating '[object Object]'. When you try to add to it, it becomes '[object Object]+whatever number you enter'.
 Arrays as an object can have operators assigned to them aswell, when you attempt to add a number or string or boolean to an array it becomes a string with the array elements and the number/string/boolean attached to the end. The same goes for explicit conversions of hashes and arrays. It will return true for Boolean(arrays), String will return a string of the array and NaN for number and the same responses as stated above for hashes.                         
 #### [Sources]---
-1. [label](link)
+1. [Source1](https://levelup.gitconnected.com/javascript-the-weird-parts-part-i-data-types-type-coercion-pbr-3ecc751ad62)
+2. [Source2](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/#:~:text=Type%20coercion%20is%20the%20process,Symbol%20(added%20in%20ES6).)
+3. [Source3](https://en.wikipedia.org/wiki/Type_conversion#C-like_languages)
+4. [Source4](https://medium.com/developers-arena/type-coercion-in-javascript-c973b369b272)
+5. [Source5](https://medium.com/front-end-weekly/implicit-coercion-in-javascript-5077ad5510d)
+6. [Source6](https://codeburst.io/javascript-essentials-types-data-structures-3ac039f9877b)
+7. [Source7](https://levelup.gitconnected.com/javascript-the-weird-parts-part-i-data-types-type-coercion-pbr-3ecc751ad62)
 ---
 
 ## Q9 |Explain data types, using examples from the JavaScript programming language.
