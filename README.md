@@ -97,10 +97,50 @@ Arrays as an object can have operators assigned to them aswell, when you attempt
 ---
 
 ## Q9 |Explain data types, using examples from the JavaScript programming language.
-Primitive, Symbols, Objects, Arrays, Undefined, null, Functions, 
-In Javascript, (and other programming languages) 
+ Objects, Arrays, null, Functions, 
+In Javascript, (and other programming languages) there are several unique data types that we used to break down data into categories that help distinguish what the data is. These Datatypes are Numbers, Strings, Booleans, Objects, Functions, Null and Undefined. The first 3 Datatypes listed; Numbers, strings, booleans are what we refer to as primitive data types. They are called primitive because they at any one time can only hold one type within them. A good example is that whenever a string, number or boolean is used it will only return another string number or boolean. Below is an example of a Boolean primitive data type it demonstrates how only one data type (which in this case is the Boolean true) can be help within the Boolean class, in this class it is the Boolean data type, the same goes for the Number data type or the string data type, The three primitive data types are incapable of storing anything bar their own data type inside.  
+``` Boolean(true) = true
+    Boolean(1) = true
+    Boolean('string') = true
+    Boolean(1+2) = true
+```
+According to the ES6 documentation, I missed several other primitive data types from my initial statement. These primitive data types are the Undefined, BigInt and Symbol. Undefined is a primitive datatype as it can only be undefined aslong as a datatype has yet to be defined as of yet, it carries the same logic as before, something cant be undefined and a number, undefined would most often be seen if you forgot to assign a variable an actual datatype and when you do undefined ceases to exist. BigInt is another primitive data type, like all primitive data types it can only store one value at a time, BigInt is used as the ES6 Docs describes 'The BigInt type is a numeric primitive in JavaScript that can represent integers with arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers.' This means that BigInt is most commonly used when a number is too large for the Numbers datatype which roughly means its outside of a physical human beings scope. The last primitive data type is the Symbol datatype, Symbols are again only capable of holding one value, what symbol does is create unique instances of a value which even if they are the exact same as another value will equal false due to it being unique.
+``` let sym1 = Symbol(123)
+    let sym2 = Symbol(123)
+    (sym1 == sym2) = false
+    let bignum = 123456789n ** 204n
+    let x;
+    console.log(x); = undefined
+```
+Finally we can start talking about non primitive datatypes, that is data types that can store more then one value within them at any one time and dont neccessarily overwrite old data to do so. The ES6 documentaion calls the datatypes "structural", other people have called them containers or dictionaries even. This is because the datatype acts like a large container/structure that holds within it smaller data types, which can also be nested within those objects, Ill explain what I mean better as I go through each type of data. Arrays are a structural data type that are most commonly defined by their square brackets [], Arrays are capable of holding any of the primitive data types within them, as well as being capable of storing other arrays within them. The other structural object in Javascript is the hash object, like the array it is capable of storing all between its {} curly braces, even smaller hash objects or arrays! Often the hash objects use symbols to identify the data types within it making it easier to call the data from inside the hash object. Both structual datatypes can be iterated through, that is to be searched through for specific data that can be returned to the user who wanted them. Another data type that is considered in this structual data mindset is the Function, while it itself is not an object its still structural in that it does store other things inside it, often code snippers and data types that are used together to provide answers that the inputter/coder is looking for. Structured objects have numerous inbuilt methods/functions that a programmer can use to do multiple different things to the objects involving modifying the data, adding new data, removing data, searching through the data etc. 
+``` let arr1 = [1, 2 , 3 , 4 , 5];
+    let arr2 = [[1,2],[3,4]];
+    let hashobjectexample = {
+      symbol: "string1"
+      key: "another name for symbol"
+      key2: 1234
+      key3: {
+        key4: true
+      }
+    };
+    let x = 1
+    function example = (num) => {
+      return x + 1
+    };
+```
+The last data type is Null, datatype null is considered a primitive datatype, as it can only be one thing, null. However datatype null only exists naturally when you are in the process of trying to call or reference another data type(from a structured data type) and it failed because the data type does not exist, for example in  my has object above if i tried to call information from a key5, key 5 does not exist and therefore would return null. If if tried to obtain an item from the above arrary arr1 and the index of 7 ( the 7th item in the array) that item does not exist and so they will return null. Outside of these referencing errors the only time null appears is when you as the programmer would assign null to an object/data type yourself
+
+
 #### [Sources]---
-1. [label](link)
+1. [Datatype1](https://www.tutorialrepublic.com/javascript-tutorial/javascript-data-types.php#:~:text=There%20are%20six%20basic%20data,objects%20are%20composite%20data%20types.)
+2. [Datatype2](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+3. [Datatype3](https://developer.mozilla.org/en-US/docs/Glossary/Undefined)
+4. [Datatype4](https://developer.mozilla.org/en-US/docs/Glossary/Symbol)
+5. [Datatype5](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+6. [Sauce6](https://developer.mozilla.org/en-US/docs/Glossary/Function)
+7. [Sauce7](https://developer.mozilla.org/en-US/docs/Glossary/Null)
+
+
 ---
 
 ## Q10 |Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language.
