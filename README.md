@@ -180,11 +180,10 @@ console.log(arr1) = [1,2,3,4,5] (reduce doesnt mutate)
 
 #### [Sources]---
 1. [Mutate vs not mutates](https://lorenstewart.me/2017/01/22/javascript-array-methods-mutating-vs-non-mutating/)
-2. [Array MDN] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Static_methods)
+2. [Array MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Static_methods)
 ---
 
 ## Q11 |Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language.
-Property accessors object["key"] = (new value). Accessing nested objects, calling them, deleting them. getters, setters. Methods on object .keys .values, .entries .seal , .freeze
 Objects the basis of object oriented programming, has numerous ways to manipulated data, several built in methods to the object class can be applied, as well as manipulation of the data inside of the object requiring you to be able to navigate your way through to the object which is another form of manipulating the object.
 Object has a few default methods that come for all objects that can be applied. They have a wide ranging of effects, I will talk about Object.keys(), Object.values(), Object.entries(), Object.seal(), Object.freeze(). Keys as a method will give you an objects keys, in objects, key values are a paired part of data most oftenly a Symbol(key) and its associated value(which can be any other data type), what .keys does it return the keys part of the object, however it does not go past the initial level of an object, meaning that any nested keys(keys within keys) will not be put into the array, its important to add that this method doesnt mutate anything just shows you the keys. .values() does the same as the keys method just with the values and not the keys, it also prints them to an array, it also is important to add this method will return the entire object(an array/ hash) that is associated to a key, with the key still within it. .entries() is similiar to keys and values, it does both at once and creates an array of arrays that has the key value pairs paired up in their own individual arrays. All three methods that I just listed are helpful if you are unsure what the object you are working on has and cant access where the object is stored.
 .seal() and .freeze() are two other class Object methods that help to STOP the manipulation of data. .seal "preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable." This means that you will be able to change the value of any key in the object, but you cant remove keys or functions, add key + value pairs to an object and finally wont be able to delete the object. .freeze() does the exact same as .seal but it also stops the modifying of values too, making it an object with "read only" privlideges. 
@@ -224,12 +223,12 @@ obj2[d] = 4 (obj2 now has an additional key value pair)
 obj2.getexample = 6
 obj2.setexample(5) ---- 'a' key now has a value of 5 through setter function
 
-
-
-
 ```
 #### [Sources]---
-1. [label](link)
+1. [MDN DOCS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+2. [DELETE](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
+3. [Freeze!](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
+4. [NON-MDN](https://medium.com/infancyit/javascript-object-manipulation-5d1145cf06ef#:~:text=JavaScript%20is%20designed%20on%20a%20simple%20object%2Dbased%20paradigm.,and%20value%20can%20be%20anything.) 
 ---
 
 ## Q12 |Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language.
