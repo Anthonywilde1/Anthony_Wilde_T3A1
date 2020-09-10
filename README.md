@@ -176,7 +176,7 @@ arr1.forEach(x => x +2 ) = 3 , 4 , 5 , 6 , 7 (doesnt mutate also returns each va
 arr1.map(x => x + 2 ) = (3, 4, 5, 6 , 7) (doesnt mutate original array)
 arr1.reduce((acc, val) => { return acc+ val}) = 16
 console.log(arr1) = [1,2,3,4,5] (reduce doesnt mutate)
-
+```
 
 #### [Sources]---
 1. [Mutate vs not mutates](https://lorenstewart.me/2017/01/22/javascript-array-methods-mutating-vs-non-mutating/)
@@ -184,7 +184,50 @@ console.log(arr1) = [1,2,3,4,5] (reduce doesnt mutate)
 ---
 
 ## Q11 |Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language.
+Property accessors object["key"] = (new value). Accessing nested objects, calling them, deleting them. getters, setters. Methods on object .keys .values, .entries .seal , .freeze
+Objects the basis of object oriented programming, has numerous ways to manipulated data, several built in methods to the object class can be applied, as well as manipulation of the data inside of the object requiring you to be able to navigate your way through to the object which is another form of manipulating the object.
+Object has a few default methods that come for all objects that can be applied. They have a wide ranging of effects, I will talk about Object.keys(), Object.values(), Object.entries(), Object.seal(), Object.freeze(). Keys as a method will give you an objects keys, in objects, key values are a paired part of data most oftenly a Symbol(key) and its associated value(which can be any other data type), what .keys does it return the keys part of the object, however it does not go past the initial level of an object, meaning that any nested keys(keys within keys) will not be put into the array, its important to add that this method doesnt mutate anything just shows you the keys. .values() does the same as the keys method just with the values and not the keys, it also prints them to an array, it also is important to add this method will return the entire object(an array/ hash) that is associated to a key, with the key still within it. .entries() is similiar to keys and values, it does both at once and creates an array of arrays that has the key value pairs paired up in their own individual arrays. All three methods that I just listed are helpful if you are unsure what the object you are working on has and cant access where the object is stored.
+.seal() and .freeze() are two other class Object methods that help to STOP the manipulation of data. .seal "preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable." This means that you will be able to change the value of any key in the object, but you cant remove keys or functions, add key + value pairs to an object and finally wont be able to delete the object. .freeze() does the exact same as .seal but it also stops the modifying of values too, making it an object with "read only" privlideges. 
+Other manipulations of objects include the delete operator for objects. Calling values with getters and setting values with setters. Starting with getters, the getters refer to calling data from within the object by using functions within the object. Combining the 'this.' which allows you to access any of the keys within the object and then using a getter method, allows you to pull the data through the object and to the console. Setters or set functions, are inbuilt object functions that you can declare that allow for the manipulation of data through the console. This is one of the main ways that a person can manipulate an object, setters also emulate one of the important ways that we can change values in objects, that is by 'objectname[existingkey] = newvalue', we can also add new key value pairs with the same format 'objectname[newkey] = newvalue' , also using an operator when you call a key (object[key]) allows you to do some of the type coercions preveiously stated in earlier questions. Finally the delete operator when called on a objects key through the correct syntax (objectname[keyname]), will remove that objects key and value from the object. 
+```
+let obj1 = {
+  a: 1,
+  b: 2,
+  3: 4,
+  name: 'anthony'
+  nested: {
+    nestedkey: "Wow"
+  }
+}
+Object.keys(obj1) = [ a, b, 3, name, nested]
+Object.values(obj1) = [ 1, 2, 4, 'anthony', {nestedkey: "Wow"}]
+Object.entires(obj1) = [[a , 1], [b, 2], [3, 4],[name, 'anthony'], [nested , {nestedkey: "wow"}]]
+Object.seal(obj1)
+delete obj1.a = Unable to delete due to seal
+obj1.a = 2 (okay because this is seal not freeze)
+Object.freeze(obj1)
+obj1.a = 4 ---- unable because object is frozen
 
+let obj2 = {
+  a: 1,
+  b: 2,
+  c: 3
+  get getexample() {
+    return this.a + this.b + this.c 
+  }
+  set setexample(x) {
+    this.a = x
+  }
+}
+
+obj2[d] = 4 (obj2 now has an additional key value pair)
+obj2.getexample = 6
+obj2.setexample(5) ---- 'a' key now has a value of 5 through setter function
+
+
+
+
+```
 #### [Sources]---
 1. [label](link)
 ---
