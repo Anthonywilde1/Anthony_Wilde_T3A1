@@ -98,13 +98,13 @@ Arrays as an object can have operators assigned to them aswell, when you attempt
 
 ## Q9 |Explain data types, using examples from the JavaScript programming language.
  Objects, Arrays, null, Functions, 
-In Javascript, (and other programming languages) there are several unique data types that we used to break down data into categories that help distinguish what the data is. These Datatypes are Numbers, Strings, Booleans, Objects, Functions, Null and Undefined. The first 3 Datatypes listed; Numbers, strings, booleans are what we refer to as primitive data types. They are called primitive because they at any one time can only hold one type within them. A good example is that whenever a string, number or boolean is used it will only return another string number or boolean. Below is an example of a Boolean primitive data type it demonstrates how only one data type (which in this case is the Boolean true) can be help within the Boolean class, in this class it is the Boolean data type, the same goes for the Number data type or the string data type, The three primitive data types are incapable of storing anything bar their own data type inside.  
+In Javascript, (and other programming languages) there are several unique data types that we used to break down data into categories that help distinguish what the data is. These Datatypes are Numbers, Strings, Booleans, Objects, Functions, Null, Undefined, BigInt, Symbol and Undefined. The following Datatypes listed; Numbers, strings, booleans, undefined, bigint, symbol are what we refer to as primitive data types. They are called primitive because they at any one time can only hold one type within them. A good example is that whenever a string, number or boolean is used it will only return another string number or boolean. Below is an example of a Boolean primitive data type it demonstrates how only one data type (which in this case is the Boolean true) can be help within the Boolean class, in this class it is the Boolean data type, the same goes for the Number data type or the string data type, Primitive data types are incapable of storing anything bar their own data type inside.  
 ``` Boolean(true) = true
     Boolean(1) = true
     Boolean('string') = true
     Boolean(1+2) = true
 ```
-According to the ES6 documentation, I missed several other primitive data types from my initial statement. These primitive data types are the Undefined, BigInt and Symbol. Undefined is a primitive datatype as it can only be undefined aslong as a datatype has yet to be defined as of yet, it carries the same logic as before, something cant be undefined and a number, undefined would most often be seen if you forgot to assign a variable an actual datatype and when you do undefined ceases to exist. BigInt is another primitive data type, like all primitive data types it can only store one value at a time, BigInt is used as the ES6 Docs describes 'The BigInt type is a numeric primitive in JavaScript that can represent integers with arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers.' This means that BigInt is most commonly used when a number is too large for the Numbers datatype which roughly means its outside of a physical human beings scope. The last primitive data type is the Symbol datatype, Symbols are again only capable of holding one value, what symbol does is create unique instances of a value which even if they are the exact same as another value will equal false due to it being unique.
+ Undefined is a primitive datatype as it can only be undefined aslong as a datatype has yet to be defined as of yet, it carries the same logic as before, something cant be undefined and a number, undefined would most often be seen if you forgot to assign a variable an actual datatype and when you do undefined ceases to exist. BigInt is another primitive data type, like all primitive data types it can only store one value at a time, BigInt is used as the ES6 Docs describes 'The BigInt type is a numeric primitive in JavaScript that can represent integers with arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers.' This means that BigInt is most commonly used when a number is too large for the Numbers datatype which roughly means its outside of a physical human beings scope. The last primitive data type is the Symbol datatype, Symbols are again only capable of holding one value, what symbol does is create unique instances of a value which even if they are the exact same as another value will equal false due to it being unique.
 ``` let sym1 = Symbol(123)
     let sym2 = Symbol(123)
     (sym1 == sym2) = false
@@ -144,9 +144,43 @@ The last data type is Null, datatype null is considered a primitive datatype, as
 ---
 
 ## Q10 |Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language.
+The array object in Javascript has many inbuilt methods that allow us (the programmer/developer) to manipulate the array. First off, a key defining factor between methods is whether the method that is manipulating the array is 'mutating' or 'non mutating', the main difference between the the two is that a 'mutating' method will change/mutate the array, as in the changes made through the method become permanent to the array for the rest of the script/page/flow, where as a non mutating method will return the same value as some of its mutating counter parts but not remove them from the original array.
+```
+Mutating Array
+let arr1 = [1,2,3,4,5]
+arr1.push(6) = [1,2,3,4,5,6]
+console.log(arr1) = [1,2,3,4,5,6]
+
+Non Mutating Array 
+let arr1 = [1,2,3,4,5]
+arr1.concat(6) = [1,2,3,4,5,6]
+console.log(arr1) = [1,2,3,4,5]
+```
+Above we see similar code, however the mutating method keeps the new array created by the adding of another number (mutating it) and when we log the arr we can see that, in the non mutating example the 6 is loss in the console.log because it was a non mutating method. Meaning it doesnt change the array permanetly.
+There is many methods within Javascript to manipulate arrays. Adding methods; push, unshift( which are mutating) and concat(not mutating), these methods add additional values to the front or back of the array, you "push" the value to the end of an array(concat does this without mutating), you can 'unshift' a value to the start of the array. The remove methods are; pop, shift, splice, slice, filter, which pop,shift and splice are mutating. Pop removes the value from the end of the array (it returns this variable to you, but its gone from the array), Shift does the same as pop but at the start of the array. Splice allows you to remove any number of items from a starting point based at an index in the array you specify and an end point( this means that splice can remove 1 or many items from the array, aswell as the entire array) and returns these items, also splice can also add elements to any part of the array aswell. Splice is mutating also! Slice is a non mutating counter part for splice (meaning it does the same thing bar removing the item from the array permanetly). Filter is the other non mutating removal method, it iterates through your array (it goes through it one by one) and depending on what you decided to filter by, it will remove all elements of an array that do not meet your filter and returns the array. Finally another way to manipulate arrays comes from the iterator methods, while these methods dont mutate the array, you can return instructions to create new arrays that have different values based off your original array. Map and forEach are both methods that iterate. Map returns the new value of what you decided to do in map while forEach does not, neither of these are mutating, you would have to save the changes to a new variable. The final manipulating method I will talk about is reduce, it allows you to execute a function on all the items of an array and then it returns the end product. It is a non mutating method.
+
+```
+let arr1 = [1,2,3,4,5]
+arr1.push(6) = [1,2,3,4,5,6]
+arr1.unshift(0) = [0,1,2,3,4,5,6]
+arr1.concat(7) = [0,1,2,3,4,5,6,7]
+console.log(arr1) = [0,1,2,3,4,5,6]
+arr1.pop() = [0,1,2,3,4,5] (returns 6)
+arr1.shift() = [1,2,3,4,5] (returns 0)
+arr1.splice(1, 0, 1) = [1,1,2,3,4,5] 
+arr1.splice(1,1) = [1,2,3,4,5] (returns (1)
+arr1.slice(1,1) = [1,3,4,5] (returns 2)
+console.log(arr1) = [1,2,3,4,5] (slice doesnt mutate)
+arr1.filter(x => x > 2) = [3,4,5] (doesnt mutate)
+arr1.forEach(x => x +2 ) = 3 , 4 , 5 , 6 , 7 (doesnt mutate also returns each value seperately)
+arr1.map(x => x + 2 ) = (3, 4, 5, 6 , 7) (doesnt mutate original array)
+arr1.reduce((acc, val) => { return acc+ val}) = 16
+console.log(arr1) = [1,2,3,4,5] (reduce doesnt mutate)
+
 
 #### [Sources]---
-1. [label](link)
+1. [Mutate vs not mutates](https://lorenstewart.me/2017/01/22/javascript-array-methods-mutating-vs-non-mutating/)
+2. [Array MDN] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Static_methods)
 ---
 
 ## Q11 |Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language.
