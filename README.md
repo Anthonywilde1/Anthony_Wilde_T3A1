@@ -57,12 +57,89 @@ While this is just a brief overview of the creation of the app it is important t
 ---
 
 ## Q7 |Explain control flow, using an example from the JavaScript programming language.
+Top to bottom, if , for , blocking , hoisting, block scope, switch.
+The control flow is the way in which the computer reads the file it is currently on, this is mostly focused on one file in particular but it is possible to run other files within a file with the proper syntax/language. First off a control flow in Javascript will run from the first line of code to the last line of the code, in that order, everytime, unless specific coding practices are used that cause the code to break this 'first to last' sequence of events. This code that breaks the top to bottom method of the javascript page are called conditional structure. Conditional structure or "Block Statements" because we call the bits of codes executed in them are called blocks, involves such things as "if else" statements, "switch" statements, "while" or "for" loops. These block statements have parameters attached to them followed by a pair of curly braces {}, if the parameters/conditions are met then the computer knows the read the code inside the brackets. First we have the if - else block, this block can be chained (done multiple times) by first using some of the information already avaliable on the page, you start an if- else statement with an if key word followed by an expression that is a Boolean value (that is whatever is in the parenthesis must equal to a true or a false e.g if (8 > 4)) and only if this condition is met then it will read the code within the adjacent curly braces, or else it will skip over it, you can follow up this if statement with an else if statement if you wish to check multiple conditions or do seperate things if the values you send in meet different requirements, finally you can use an else block at the end which is used if the code doesnt meet any of the previous statements you have written, the language knows to skip over any and all blocks that it doesnt meet the requirements to use, skipping the 'top to bottom' flow by shortcutting and reading only what is required. Switch statements work similiarly to if else statements, they are used if a conditional was to have multiple answers, it is a better practice to use switch statements to if else statements if you want a single expression to have multiple pathways (this will be written in code further down the page). We also have while/for loop blocks that allow you to repeat a specific block while certain conditions are met, or for every element in an expression. This means that the code within the adjacent curly brackets will be run as many times as is needed, (for while loops, it is until the expression in the paraenthesis follow the while keyword is no longer true, for "for" loops it runs the loop until the for loop has gone through all data it has been given). These loops/ blocks also have a few escapes to get the computer to stop reading through it and continue on reading the program from top to bottom, after the block with the escape in it, the keyword "break" when used in these blocks immediately causes the computer to stop reading where it was and go back out of the block scope. Theres also a continue keyword but this doesnt affect the control flow its used to continue while / for loops. 
+Finally the other part of control flow that breaks the top to bottom reading process that is factory default is the idea of 'hositing', hoisting is a tricky concept "A strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code." That is to say that hoisting is the ability for Javascript to "skip" or locate functions/ methods further down the page from where the computer is reading(in its top to bottom approach) to hoist the information it needs to allow the functions/methods to succeed, this is to allow the script/page to run without crashing if you write a function after you have already made calls for that function to be used earlier within the page (this will be explained in the written examples). Hositing is odd in that it works in very specific technical way and if this isnt met then the machine will define things as undefined or error out because it doesnt have the right information or cant do what you want it to do.
+
+```
+(Please treat all code seperated by ----- as if they were on seperate pages)
+let a = 10
+console.log(a)
+let b = 20
+console.log(b - a)
+----------------------------------------------------------------------------
+if else blocks 
+let x = 15
+if (x < 14) {
+  console.log("this will be skipped because x is greated then 14)
+} else if (x = 15) {
+  console.log("after skipping first block this block will run because x is 15)
+} else {
+  console.log(you could run something here if x doesnt meet either of the first two conditions)
+}
+----------------------------------------------------------------------------
+switch statement
+let console = "nintendo"
+switch (console) {
+  case "xbox":
+    console.log(I guess you could play Halo but not much else);
+    break;
+  case "playstation":
+    console.log(remember the halo killer Killzone, best to stay forgotten);
+    break;
+  case "nintendo":
+    console.log("NINTENDO 64 OMG");
+    break;
+}
+console.log(this happens after the switch console block)    p.s the case for xbox and playstation wont be read as we 
+can see that console is nintendo.
+------------------------------------------------------------------------------
+while / for statement
+let i = 0
+while ( i < 5 ) {
+  console.log(i);         #this runs a code that will print the numbers 0-4 to console before stopping 
+  i++                      when the i is no longer less than 5
+}
+
+let array = ["a","b","c","d"]
+for (x in array) {
+  console.log(array[x])   prints a b c d, before stopping
+}   
+
+------------------------------------------------------------------------------
+break keyword
+let x = true 
+if (x == true) {
+  console.log(before the break)
+  break;
+  console.log(after the break)  # this will not run due to break
+}
+
+------------------------------------------------------------------------------
+hoisting 
+
+console.log(fun()) # this will console.log the function of fun despite function being below it
+
+x = 3
+
+if (x < 2 ) {
+  console.log( this code exists to demonstrate that hoisting skips past it to find the function before returning to the top);
+}
+
+const fun = () => {
+  console.log(I am having fun)
+}
+
+```
 
 #### [Sources]---
-1. [label](link)
+1. [Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+2. [Control Flow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#Control_flow)
+3. [Control Flow2](https://developer.mozilla.org/en-US/docs/Glossary/Control_flow)
+4. [Control Flow + error handling](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
 ---
 
-## Q8 |Explain type coercion, using examples from the JavaScript programming language.
+## Q8 |Explain  strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.type coercion, using examples from the JavaScript programming language.
 Primative Datatypes, Implicit, Explicit, 3 types; string, boolean, number
 Type Coercion comes in many types in Javascript, but before I discuss how I need to state what types can be coerced. Primative data types are any data type in Javacript that is not an object this includes; strings, numbers, booleans(true/false), null, undefined and symbols. I will also discuss Objects, a datatype made up of having other datatypes in it and having the [] square brackets or {} curly brackets.</br>
 Type Coercion in Javascript happens in 1 of 3 ways when it is done in the language, type coercion will coerce whatever the datatype is into either; a string, a number or a boolean datatype. This is important to know as if you conerce from any data type you will get a string(words), a number or a boolean(true/false). Type coercion is also done explicitly or implicitly. Explicit type coercion is the use Javascript in built objects to do the coercion for you, an example being we take a value called (val) and we write the inbuilt JS objects Number, Boolean or String. Number(val) would convert the data type explicitly into a number, if the value is a boolean true or false it becomes either a 1 or 0, if its a string the coereced value becomes a NaN or Not A Number(which despite the name is infact a number), if the value was a number in a string '16' then the value will become a number data type. Boolean coercion is easier to understand if (val) is a null, undefined, empty, 0 or false then the Boolean object will return false in its explicit coercion or if its not one of the things I have listed it will return true. The last explicit conversion is the String object, this will convert the (val) into whatever it was but with quotation marks around it, '1', 'true', 'false'.</br>
