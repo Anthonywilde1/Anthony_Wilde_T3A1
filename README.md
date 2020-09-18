@@ -61,13 +61,13 @@ Top to bottom, if , for , blocking , hoisting, block scope, switch.
 The control flow is the way in which the computer reads the file it is currently on, this is mostly focused on one file in particular but it is possible to run other files within a file with the proper syntax/language. First off a control flow in Javascript will run from the first line of code to the last line of the code, in that order, everytime, unless specific coding practices are used that cause the code to break this 'first to last' sequence of events. This code that breaks the top to bottom method of the javascript page are called conditional structure. Conditional structure or "Block Statements" because we call the bits of codes executed in them are called blocks, involves such things as "if else" statements, "switch" statements, "while" or "for" loops. These block statements have parameters attached to them followed by a pair of curly braces {}, if the parameters/conditions are met then the computer knows the read the code inside the brackets. First we have the if - else block, this block can be chained (done multiple times) by first using some of the information already avaliable on the page, you start an if- else statement with an if key word followed by an expression that is a Boolean value (that is whatever is in the parenthesis must equal to a true or a false e.g if (8 > 4)) and only if this condition is met then it will read the code within the adjacent curly braces, or else it will skip over it, you can follow up this if statement with an else if statement if you wish to check multiple conditions or do seperate things if the values you send in meet different requirements, finally you can use an else block at the end which is used if the code doesnt meet any of the previous statements you have written, the language knows to skip over any and all blocks that it doesnt meet the requirements to use, skipping the 'top to bottom' flow by shortcutting and reading only what is required. Switch statements work similiarly to if else statements, they are used if a conditional was to have multiple answers, it is a better practice to use switch statements to if else statements if you want a single expression to have multiple pathways (this will be written in code further down the page). We also have while/for loop blocks that allow you to repeat a specific block while certain conditions are met, or for every element in an expression. This means that the code within the adjacent curly brackets will be run as many times as is needed, (for while loops, it is until the expression in the paraenthesis follow the while keyword is no longer true, for "for" loops it runs the loop until the for loop has gone through all data it has been given). These loops/ blocks also have a few escapes to get the computer to stop reading through it and continue on reading the program from top to bottom, after the block with the escape in it, the keyword "break" when used in these blocks immediately causes the computer to stop reading where it was and go back out of the block scope. Theres also a continue keyword but this doesnt affect the control flow its used to continue while / for loops. 
 Finally the other part of control flow that breaks the top to bottom reading process that is factory default is the idea of 'hositing', hoisting is a tricky concept "A strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code." That is to say that hoisting is the ability for Javascript to "skip" or locate functions/ methods further down the page from where the computer is reading(in its top to bottom approach) to hoist the information it needs to allow the functions/methods to succeed, this is to allow the script/page to run without crashing if you write a function after you have already made calls for that function to be used earlier within the page (this will be explained in the written examples). Hositing is odd in that it works in very specific technical way and if this isnt met then the machine will define things as undefined or error out because it doesnt have the right information or cant do what you want it to do.
 
-```
+```js
 (Please treat all code seperated by ----- as if they were on seperate pages)
 let a = 10
 console.log(a)
 let b = 20
 console.log(b - a)
-----------------------------------------------------------------------------
+/*------------------------------------------------------------------------------*/
 if else blocks 
 let x = 15
 if (x < 14) {
@@ -77,8 +77,8 @@ if (x < 14) {
 } else {
   console.log(you could run something here if x doesnt meet either of the first two conditions)
 }
-----------------------------------------------------------------------------
-switch statement
+/*------------------------------------------------------------------------------*/
+/*switch statement*/
 let console = "nintendo"
 switch (console) {
   case "xbox":
@@ -91,10 +91,10 @@ switch (console) {
     console.log("NINTENDO 64 OMG");
     break;
 }
-console.log(this happens after the switch console block)    p.s the case for xbox and playstation wont be read as we 
+console.log(this happens after the switch console block)    /*p.s the case for xbox and playstation wont be read as we 
 can see that console is nintendo.
-------------------------------------------------------------------------------
-while / for statement
+/* ----------------------------------------------------------------------------- */
+/* while / for statement */
 let i = 0
 while ( i < 5 ) {
   console.log(i);         #this runs a code that will print the numbers 0-4 to console before stopping 
@@ -106,8 +106,8 @@ for (x in array) {
   console.log(array[x])   prints a b c d, before stopping
 }   
 
-------------------------------------------------------------------------------
-break keyword
+/*------------------------------------------------------------------------------*/
+/*break keyword*/
 let x = true 
 if (x == true) {
   console.log(before the break)
@@ -115,8 +115,8 @@ if (x == true) {
   console.log(after the break)  # this will not run due to break
 }
 
-------------------------------------------------------------------------------
-hoisting 
+/*------------------------------------------------------------------------------*/
+/*hoisting*/ 
 
 console.log(fun()) # this will console.log the function of fun despite function being below it
 
@@ -146,7 +146,8 @@ Type Coercion in Javascript happens in 1 of 3 ways when it is done in the langua
 Implicit conversion is when you use the inbuilt operators of certain data types(such as +, - , &&, || ) aswell as the == sign to coerce data. These operators allow us to do implicit conversion between datatypes within the Javascipt code for example; adding a string(RayMysterio) and a number(619) together coerces the number into a string creating "RayMysterio619" , you can take away a string(althought it must be a number within the string) from a number or a number from a string in both cases it implicitly converts the string into a number value. The operators && or || to compare two or more operators with && only giving a response true if both sides of the operator are true, the || or 'or' operator will look if either of the object's is a true value and return true if it is. These operators use similar and in some cases the exact same amount logic as stated in Boolean explicit conversion. Using the operators causes the value to get passed into a form that works with the operator and then conducting the logic on it. Also == compares to data types in a boolean way e.g 'string' == number  would be false because a string isnt inherently a number UNLESS the string is '12' or another number, the == operator will do these implicit conversions if possible before return whether the types are the same type.  </br>
 Finally Objects can be type coerced inside of Javascript but normally isn't done as doing type coercion in the data within an object itself. Hash Objects {} are considered a true boolean value, when its converted to a string it becomes an array stating '[object Object]'. When you try to add to it, it becomes '[object Object]+whatever number you enter'.
 Arrays as an object can have operators assigned to them aswell, when you attempt to add a number or string or boolean to an array it becomes a string with the array elements and the number/string/boolean attached to the end. The same goes for explicit conversions of hashes and arrays. It will return true for Boolean(arrays), String will return a string of the array and NaN for number and the same responses as stated above for hashes.
-``` '10' + 10 = '1010'
+```js 
+    '10' + 10 = '1010'
     '10' - 10 = 0
     'beans' - 10 = NaN
     true && 1 = 1
@@ -174,15 +175,17 @@ Arrays as an object can have operators assigned to them aswell, when you attempt
 ---
 
 ## Q9 |Explain data types, using examples from the JavaScript programming language.
- Objects, Arrays, null, Functions, 
+
 In Javascript, (and other programming languages) there are several unique data types that we used to break down data into categories that help distinguish what the data is. These Datatypes are Numbers, Strings, Booleans, Objects, Functions, Null, Undefined, BigInt, Symbol and Undefined. The following Datatypes listed; Numbers, strings, booleans, undefined, bigint, symbol are what we refer to as primitive data types. They are called primitive because they at any one time can only hold one type within them. A good example is that whenever a string, number or boolean is used it will only return another string number or boolean. Below is an example of a Boolean primitive data type it demonstrates how only one data type (which in this case is the Boolean true) can be help within the Boolean class, in this class it is the Boolean data type, the same goes for the Number data type or the string data type, Primitive data types are incapable of storing anything bar their own data type inside.  
-``` Boolean(true) = true
+```js 
+    Boolean(true) = true
     Boolean(1) = true
     Boolean('string') = true
     Boolean(1+2) = true
 ```
  Undefined is a primitive datatype as it can only be undefined aslong as a datatype has yet to be defined as of yet, it carries the same logic as before, something cant be undefined and a number, undefined would most often be seen if you forgot to assign a variable an actual datatype and when you do undefined ceases to exist. BigInt is another primitive data type, like all primitive data types it can only store one value at a time, BigInt is used as the ES6 Docs describes 'The BigInt type is a numeric primitive in JavaScript that can represent integers with arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers.' This means that BigInt is most commonly used when a number is too large for the Numbers datatype which roughly means its outside of a physical human beings scope. The last primitive data type is the Symbol datatype, Symbols are again only capable of holding one value, what symbol does is create unique instances of a value which even if they are the exact same as another value will equal false due to it being unique.
-``` let sym1 = Symbol(123)
+```js
+ let sym1 = Symbol(123)
     let sym2 = Symbol(123)
     (sym1 == sym2) = false
     let bignum = 123456789n ** 204n
@@ -190,7 +193,8 @@ In Javascript, (and other programming languages) there are several unique data t
     console.log(x); = undefined
 ```
 Finally we can start talking about non primitive datatypes, that is data types that can store more then one value within them at any one time and dont neccessarily overwrite old data to do so. The ES6 documentaion calls the datatypes "structural", other people have called them containers or dictionaries even. This is because the datatype acts like a large container/structure that holds within it smaller data types, which can also be nested within those objects, Ill explain what I mean better as I go through each type of data. Arrays are a structural data type that are most commonly defined by their square brackets [], Arrays are capable of holding any of the primitive data types within them, as well as being capable of storing other arrays within them. The other structural object in Javascript is the hash object, like the array it is capable of storing all between its {} curly braces, even smaller hash objects or arrays! Often the hash objects use symbols to identify the data types within it making it easier to call the data from inside the hash object. Both structual datatypes can be iterated through, that is to be searched through for specific data that can be returned to the user who wanted them. Another data type that is considered in this structual data mindset is the Function, while it itself is not an object its still structural in that it does store other things inside it, often code snippers and data types that are used together to provide answers that the inputter/coder is looking for. Structured objects have numerous inbuilt methods/functions that a programmer can use to do multiple different things to the objects involving modifying the data, adding new data, removing data, searching through the data etc. 
-``` let arr1 = [1, 2 , 3 , 4 , 5];
+```js 
+    let arr1 = [1, 2 , 3 , 4 , 5];
     let arr2 = [[1,2],[3,4]];
     let hashobjectexample = {
       symbol: "string1"
@@ -222,13 +226,13 @@ The last data type is Null, datatype null is considered a primitive datatype, as
 
 ## Q10 |Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language.
 The array object in Javascript has many inbuilt methods that allow us (the programmer/developer) to manipulate the array. First off, a key defining factor between methods is whether the method that is manipulating the array is 'mutating' or 'non mutating', the main difference between the the two is that a 'mutating' method will change/mutate the array, as in the changes made through the method become permanent to the array for the rest of the script/page/flow, where as a non mutating method will return the same value as some of its mutating counter parts but not remove them from the original array.
-```
-Mutating Array
+```js
+/*Mutating Array*/
 let arr1 = [1,2,3,4,5]
 arr1.push(6) = [1,2,3,4,5,6]
 console.log(arr1) = [1,2,3,4,5,6]
 
-Non Mutating Array 
+/*Non Mutating Array */ 
 let arr1 = [1,2,3,4,5]
 arr1.concat(6) = [1,2,3,4,5,6]
 console.log(arr1) = [1,2,3,4,5]
@@ -236,23 +240,23 @@ console.log(arr1) = [1,2,3,4,5]
 Above we see similar code, however the mutating method keeps the new array created by the adding of another number (mutating it) and when we log the arr we can see that, in the non mutating example the 6 is loss in the console.log because it was a non mutating method. Meaning it doesnt change the array permanetly.
 There is many methods within Javascript to manipulate arrays. Adding methods; push, unshift( which are mutating) and concat(not mutating), these methods add additional values to the front or back of the array, you "push" the value to the end of an array(concat does this without mutating), you can 'unshift' a value to the start of the array. The remove methods are; pop, shift, splice, slice, filter, which pop,shift and splice are mutating. Pop removes the value from the end of the array (it returns this variable to you, but its gone from the array), Shift does the same as pop but at the start of the array. Splice allows you to remove any number of items from a starting point based at an index in the array you specify and an end point( this means that splice can remove 1 or many items from the array, aswell as the entire array) and returns these items, also splice can also add elements to any part of the array aswell. Splice is mutating also! Slice is a non mutating counter part for splice (meaning it does the same thing bar removing the item from the array permanetly). Filter is the other non mutating removal method, it iterates through your array (it goes through it one by one) and depending on what you decided to filter by, it will remove all elements of an array that do not meet your filter and returns the array. Finally another way to manipulate arrays comes from the iterator methods, while these methods dont mutate the array, you can return instructions to create new arrays that have different values based off your original array. Map and forEach are both methods that iterate. Map returns the new value of what you decided to do in map while forEach does not, neither of these are mutating, you would have to save the changes to a new variable. The final manipulating method I will talk about is reduce, it allows you to execute a function on all the items of an array and then it returns the end product. It is a non mutating method.
 
-```
+```js
 let arr1 = [1,2,3,4,5]
-arr1.push(6) = [1,2,3,4,5,6]
-arr1.unshift(0) = [0,1,2,3,4,5,6]
-arr1.concat(7) = [0,1,2,3,4,5,6,7]
-console.log(arr1) = [0,1,2,3,4,5,6]
-arr1.pop() = [0,1,2,3,4,5] (returns 6)
-arr1.shift() = [1,2,3,4,5] (returns 0)
-arr1.splice(1, 0, 1) = [1,1,2,3,4,5] 
-arr1.splice(1,1) = [1,2,3,4,5] (returns (1)
-arr1.slice(1,1) = [1,3,4,5] (returns 2)
-console.log(arr1) = [1,2,3,4,5] (slice doesnt mutate)
-arr1.filter(x => x > 2) = [3,4,5] (doesnt mutate)
-arr1.forEach(x => x +2 ) = 3 , 4 , 5 , 6 , 7 (doesnt mutate also returns each value seperately)
-arr1.map(x => x + 2 ) = (3, 4, 5, 6 , 7) (doesnt mutate original array)
-arr1.reduce((acc, val) => { return acc+ val}) = 16
-console.log(arr1) = [1,2,3,4,5] (reduce doesnt mutate)
+arr1.push(6)/* = [1,2,3,4,5,6]*/
+arr1.unshift(0) /*= [0,1,2,3,4,5,6]*/
+arr1.concat(7) /*= [0,1,2,3,4,5,6,7]*/
+console.log(arr1)/* = [0,1,2,3,4,5,6]*/
+arr1.pop() /*= [0,1,2,3,4,5] /*(returns 6) */
+arr1.shift() /*= [1,2,3,4,5] /*(returns 0)*/
+arr1.splice(1, 0, 1) /*= [1,1,2,3,4,5] 
+arr1.splice(1,1) /*= [1,2,3,4,5] (returns (1)*/
+arr1.slice(1,1) = /*[1,3,4,5] (returns 2)*/
+console.log(arr1) /*= [1,2,3,4,5] (slice doesnt mutate)*/
+arr1.filter(x => x > 2) /*= [3,4,5] (doesnt mutate)*/
+arr1.forEach(x => x +2 ) /*= 3 , 4 , 5 , 6 , 7 (doesnt mutate also returns each value seperately)*/
+arr1.map(x => x + 2 ) /*= (3, 4, 5, 6 , 7) (doesnt mutate original array)*/
+arr1.reduce((acc, val) => { return acc+ val})/* = 16*/
+console.log(arr1) = [1,2,3,4,5] /*(reduce doesnt mutate)*/
 ```
 
 #### [Sources]---
@@ -265,7 +269,7 @@ Objects the basis of object oriented programming, has numerous ways to manipulat
 Object has a few default methods that come for all objects that can be applied. They have a wide ranging of effects, I will talk about Object.keys(), Object.values(), Object.entries(), Object.seal(), Object.freeze(). Keys as a method will give you an objects keys, in objects, key values are a paired part of data most oftenly a Symbol(key) and its associated value(which can be any other data type), what .keys does it return the keys part of the object, however it does not go past the initial level of an object, meaning that any nested keys(keys within keys) will not be put into the array, its important to add that this method doesnt mutate anything just shows you the keys. .values() does the same as the keys method just with the values and not the keys, it also prints them to an array, it also is important to add this method will return the entire object(an array/ hash) that is associated to a key, with the key still within it. .entries() is similiar to keys and values, it does both at once and creates an array of arrays that has the key value pairs paired up in their own individual arrays. All three methods that I just listed are helpful if you are unsure what the object you are working on has and cant access where the object is stored.
 .seal() and .freeze() are two other class Object methods that help to STOP the manipulation of data. .seal "preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable." This means that you will be able to change the value of any key in the object, but you cant remove keys or functions, add key + value pairs to an object and finally wont be able to delete the object. .freeze() does the exact same as .seal but it also stops the modifying of values too, making it an object with "read only" privlideges. 
 Other manipulations of objects include the delete operator for objects. Calling values with getters and setting values with setters. Starting with getters, the getters refer to calling data from within the object by using functions within the object. Combining the 'this.' which allows you to access any of the keys within the object and then using a getter method, allows you to pull the data through the object and to the console. Setters or set functions, are inbuilt object functions that you can declare that allow for the manipulation of data through the console. This is one of the main ways that a person can manipulate an object, setters also emulate one of the important ways that we can change values in objects, that is by 'objectname[existingkey] = newvalue', we can also add new key value pairs with the same format 'objectname[newkey] = newvalue' , also using an operator when you call a key (object[key]) allows you to do some of the type coercions preveiously stated in earlier questions. Finally the delete operator when called on a objects key through the correct syntax (objectname[keyname]), will remove that objects key and value from the object. 
-```
+```js
 let obj1 = {
   a: 1,
   b: 2,
@@ -275,14 +279,14 @@ let obj1 = {
     nestedkey: "Wow"
   }
 }
-Object.keys(obj1) = [ a, b, 3, name, nested]
-Object.values(obj1) = [ 1, 2, 4, 'anthony', {nestedkey: "Wow"}]
-Object.entires(obj1) = [[a , 1], [b, 2], [3, 4],[name, 'anthony'], [nested , {nestedkey: "wow"}]]
+Object.keys(obj1) /*= [ a, b, 3, name, nested]*/
+Object.values(obj1) /*= [ 1, 2, 4, 'anthony', {nestedkey: "Wow"}]*/
+Object.entires(obj1) /*= [[a , 1], [b, 2], [3, 4],[name, 'anthony'], [nested , {nestedkey: "wow"}]]*/
 Object.seal(obj1)
-delete obj1.a = Unable to delete due to seal
-obj1.a = 2 (okay because this is seal not freeze)
+delete obj1.a /*= Unable to delete due to seal */
+obj1.a = 2 /*(okay because this is seal not freeze) */
 Object.freeze(obj1)
-obj1.a = 4 ---- unable because object is frozen
+obj1.a /*= 4 ---- unable because object is frozen*/
 
 let obj2 = {
   a: 1,
@@ -296,9 +300,9 @@ let obj2 = {
   }
 }
 
-obj2[d] = 4 (obj2 now has an additional key value pair)
-obj2.getexample = 6
-obj2.setexample(5) ---- 'a' key now has a value of 5 through setter function
+obj2[d] /*= 4 (obj2 now has an additional key value pair)*/
+obj2.getexample /*= 6*/
+obj2.setexample(5) /*---- 'a' key now has a value of 5 through setter function*/
 
 ```
 #### [Sources]---
@@ -314,10 +318,33 @@ JSON or Javascript Object Notation is a seperate file type to standard JS. It is
 Creating JSON is simple enough, we can create a .JSON file and write in as many objects or arrays or both as you want, as long as all the keys are "strings" and you start the file off with a '{ or ['. Next if wanted to create an object within a JS script (that was mentioned in the previous question) we can take the object that we saved to a variable and pass it the method stringify(), stringify takes an object as its parameter and returns the 'string'-ify version of the object (that is the same object with all key/values as strings), this new object can then be written into a seperate JSON file using node and a few key words (fs which is file system and .writefile, followed by the object) and you've created an object that is now a JSON file! Additionally you can add object key/values through the standard object ways (object.key = value or object[key] = value).</br>
 Deleting JSON is also similiar to a standard JS object, first off the one that stands out, if you want to you can just delete the text from the JSON file. JSON objects can be deleted or removed in the same ways as suggested above, that is through the delete command or by doing things like splicing(pop, shift etc) or inserting new values into the keys.</br> 
 Calling JSON is the main area where JSON is used, you can call JSON files into your webpages through script and then use them on that page to show alot of data while keeping the webpages clean and the data in a separate file, the main way we call a JSON object or Parsing the JSON. The JSON has a method called parse() that returns a JSON object as a standard Javascript object, with parse you can call an object that has been stringified on the same page, aswell as a seperate file within the same file system, once the object has been called we can assign it a variable and manipulate it further. Whether its JSON or Object. </br>
-Once an object has been called/parsed from within the same file/separate file we can iterate through it using the same methods that we mentioned above forEach or Map are your standard iterators, while and for loops can also be used on a JSON object, its important to note that a JSON object does not have to be un-strung to be iterated through or added/delete from. It can continue to do these searches regardless of being a JSON or an Object.</br>  
+Once an object has been called/parsed from within the same file/separate file we can iterate through it using the same methods that we mentioned above while and for loops can be used on a JSON object, its important to note that a JSON object does not have to be un-strung to be iterated through or added/delete from, the for and while loops are important as its the only way we can loop through  an object, but through using the loops we can call the data within, this can be challenging when there are a mixture of arrays and objects it is still possible to sift through the data to get to where you want to be. JSON arrays can be itterated through with a forEach and Map method.</br>  
 Another way to call a JSON is by using the Object.keys or Object.values methods, or with the calling of the element within the object e.g foo.bar["string"] this is because a JSON behaves like a regular object just with strings in place of all keys and values. The .keys or .values method will behave the exact same as stated in the object question, it will return the keys of the object or the values of the object, but it will be in strings. In this way JSON behaves the exact same when it comes to calling objects as a regular object. The other object-like data type in a JSON is an array, these arrays, while containing entirely strings or string key value pairs, can be iterated through and push spliced shifted added to as any other array in javascript. JSON converts the data into strings but doesnt inhibit the object from being worked upon as it was previously except for the data types themselves(as in all data within is now a string until converted back).</br>
 Finally because of the nature of objects in javascript and in JSON, we can access data directly if we know how it was formed, that is to say if we want to reach a key value pair 3 nests deep we can, as long as we state the objects name and then chain the keys until we reach the one we need. e.g object.chain1.chain2.key = value OR object.chain1.chain2[key] = value. JSON allows for the same manipulation of data that we would use for a standard Javascript object with a few additional file transferance capabilities that allow for a wider range of use of objects for things like APIs.
 
+```js
+let obj1 = {a: 1, b: 2, c: 3}
+JSON.stringify(obj1) /*(now obj1 = "{"a": 1, "b": 2, "c": 3}")*/
+obj1["a"] /*= 1*/
+obj1.b /*= 2*/
+
+
+for (x in obj1) {console.log(x)}/*  (console would log a, b ,c)*/
+ for (x in obj1) {console.log(obj1[x])} /*(would log 1,2,3)*/
+let obj2 /*= {one: 9, two : [1,2,3,4,5], three: 8 }*/
+
+JSON.stringify(obj2) /*= '{"one":9,"two":[1,2,3,4,5],"three":8}'*/
+obj2.two.map(x => ( x + 1)) /*= [ 2, 3, 4, 5, 6 ] iterating through an array in JSON*/
+delete obj2.two
+obj2 /*= '{"one":9, "three":8}'*/
+
+let obj3 = {onelevel: {twolevels: {threelevels: "you found me!"}}}
+JSON.stringify(obj3) /* = '{"onelevel":{"twolevels":{"threelevels":"you found me!"}}}' */
+obj3.onelevel.twolevels["threelevels"]/* = 'you found me!"*/
+
+
+
+```
 
 #### [Sources]---
 1. [MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
