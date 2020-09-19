@@ -356,42 +356,45 @@ obj3.onelevel.twolevels["threelevels"]/* = 'you found me!"*/
 ## Q13 |For the code snippet provided below, write comments for each line of code to explain its functionality. In your comments you must demonstrates your ability to recognise and identify functions, ranges and classes.
 
 ```js
-class Car {
-  constructor(brand) {
-    this.carname = brand;
+class Car { /*establishes that this is a Class Object allowing you to create objects/data that have code to go along with it */
+  constructor(brand) { /*this is the initializer of the object, the thing that happens on creation, it can require parameters i,e brand*/
+    this.carname = brand; /*The parameter brand from the constructor  it is assigning the variable carname with the value of brand. 'this.' is added to the start of carname to allow carname to have object scope, that is the ability to be used outside the constructor curly brackets and anywhere within the Car brackets */
   }
-  present() {
-    return 'I have a ' + this.carname;
+  present() {  /* a method created in for the class Car */
+    return 'I have a ' + this.carname; /* return the string I have a and whatever the value of carname is from the constructor, because this was called in the constructor and here the method works */
   }
+} /* end of car object block */
+
+class Model extends Car { /* a new class Model that inherits from the class Car  */
+  constructor(brand, mod) { /* the initializer of the object, it has 2 parameters, brand and mod  */
+    super(brand); /* super calls the parents constructor method, allowing us to use the same brand from the Car class here, we also get access to all methods from the Car class through this super + the extends keyword earlier */
+    this.model = mod; /*a second parameter for creation of this Model Object, it has object scope due to the this.model that the parameter mod is assigned to */
+  }
+  show() { /* a method belonging to the Model class only */
+    return this.present() + ', it was made in ' + this.model; /*when the method is used it returns a string starting with a method inherited from the Car class present and followed by a string and finally calls the model from the Model objects creation it puts it all together with string concattenation */
+  }
+} /* end of model object  */
+
+let makes = ["Ford", "Holden", "Toyota"] /*an array called makes that was created using lets, allowing for modifiability it has 3 items within the array 3 strings named after car brands */
+let models = Array.from(new Array(40), (x,i) => i + 1980) /*assigns an variable called models from an Array, Array.from will return whats in the paraenthesis after it to an array. the new Array code creates a new array the (40) in parenthesis will create 40 undefined elements, (x,i) it iterates through the array of 40 undefined elements, x is the iterator and i is the value of the element, it takes on the value of the array.length i.e array[0] = 0, so it goes 1980, 1981, 1982 */
+
+function randomIntFromInterval(min,max) { // min and max included, a function called randomInt.... it has 2 parameters min and max */
+    return Math.floor(Math.random()*(max-min+1)+min);/*returns a number that is rounded down, the number is a random number that is the value of max-min + 1 + min) math .random returns a random number between the value from the sum to the right of it */
 }
 
-class Model extends Car {
-  constructor(brand, mod) {
-    super(brand);
-    this.model = mod;
-  }
-  show() {
-    return this.present() + ', it was made in ' + this.model;
-  }
-}
+for (model of models) { /* a for loop for iterating through the array of data in models, (40 times as there are 40 data entries created in the array earlier) */
 
-let makes = ["Ford", "Holden", "Toyota"]
-let models = Array.from(new Array(40), (x,i) => i + 1980)
+  make = makes[randomIntFromInterval(0,makes.length-1)] /*create a variable make that gets an element from the makes array through the use of the function and feeds the  function a min of 0 and a max of the makes array length -1 */
+  model = models[randomIntFromInterval(0,makes.length-1)] /* creates a cariable that gets an element from the models array it does this through the same function and feeds it the exact same min and max values, 0 and makes.length -1 please note this is makes array and NOT the models array that is the max value, causing the answers to be between the values 1980 - 1982 */
 
-function randomIntFromInterval(min,max) { // min and max included
-    return Math.floor(Math.random()*(max-min+1)+min);
-}
-
-for (model of models) {
-
-  make = makes[randomIntFromInterval(0,makes.length-1)]
-  model = models[randomIntFromInterval(0,makes.length-1)]
-
-  mycar = new Model(make, model);
-  console.log(mycar.show())
+  mycar = new Model(make, model); /* assigns a variable mycar that creates  a new Model object using the variables make and model gotten above you can see in Model that the constructor wants different named parameters however these are just placeholder names they dont explicitly needs to be brand and mod*/
+  console.log(mycar.show()) /*console logs the results of the mycar variable with the method show from the model class talked about above, this prints to the console, I have a make, it was made in model, finally this will happen 40 times before finishing  as the array models is 40 elements long */
 }
 ```
 
 
 #### [Sources]---
-1. [label](link)
+1. [https://www.w3schools.com/JSREF/jsref_class_super.asp](https://www.w3schools.com/JSREF/jsref_class_super.asp)
+2. [https://www.w3schools.com/js/js_this.asp](https://www.w3schools.com/js/js_this.asp)
+3. [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+4. [https://stackoverflow.com/questions/3895478/does-javascript-have-a-method-like-range-to-generate-a-range-within-the-supp](https://stackoverflow.com/questions/3895478/does-javascript-have-a-method-like-range-to-generate-a-range-within-the-supp)
