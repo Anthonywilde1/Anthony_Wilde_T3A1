@@ -40,7 +40,7 @@ The imporant aspects are; <u><strong>Usability</u></strong>, <u><strong>Modifiab
 A team that is attempting to develop a website for a small business would need to have an understanding of HTML and CSS. I would say that HTML experience should be enough to be able to write a page.<br> CSS more so, as the CSS will be what the small business is looking at (CSS is valueable as it is the first impressions for most people that count), CSS also allows you to modify the screen for different technologies.<br> A language/web framework such as Ruby and Ruby on rails or Javascript and React which allows you to create multi page websites.<br> The team would need a good understanding of databases aswell because depending on the structure or the website or how big this small business you may need to use a different Database systems( for the sake of this question I will say they need to know PostgreSQL), aswell as being able to modify a database through the modification of tables within the database.<br> The team needs to also have knowledge of deploying web based apps, usually done as a service that they will have to work out with the small business. This deployment service is important because it is what will keep the website running post production. Without deployment you wouldn't have a working website so to have that knowledge is vital for a web dev.<br> I would also suggest that the team have a good ability to communicate both externally and internally. You want to be able to understand what the business wants and communicate what is possible to them. You also need to communicate who does what for the project. It is a bad use of time to have 5 people all making the same database 5 times, communicating is important!<br> Finally depending on what the business wants, maybe the knowledge/ability to download or use different payment services, or possible verification services well. This being a small app I can possible see both of these things being used however the website could also just be a nice set up that advertises something you need to be in store to get, like a restaurant or driving lessons. <br> Being able to track individual users for things like payment and authentication are common enough that I would want my team to be able to install a system into the website that takes care of that feature aswell. I should also mention that a team should have someone who focus on the UX (User experience design) and that a person on the team shoulld be focused and have the skills to run as many tests as possible for the application, testing is important for development.        
 
 #### [Sources]---
-1. [No source I just talked to Carl via slack)
+1. [No source I just talked to Carl via slack]
 ---
 
 ## Q5 |With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges.
@@ -83,16 +83,16 @@ if (x < 14) {
 let console = "nintendo"
 switch (console) {
   case "xbox":
-    console.log(I guess you could play Halo but not much else);
+    console.log("I guess you could play Halo but not much else");
     break;
   case "playstation":
-    console.log(remember the halo killer Killzone, best to stay forgotten);
+    console.log("remember the halo killer Killzone, best to stay forgotten");
     break;
   case "nintendo":
     console.log("NINTENDO 64 OMG");
     break;
 }
-console.log(this happens after the switch console block)    /*p.s the case for xbox and playstation wont be read as we 
+console.log("this happens after the switch console block")    /*p.s the case for xbox and playstation wont be read as we 
 can see that console is nintendo.
 /* ----------------------------------------------------------------------------- */
 /* while / for statement */
@@ -119,16 +119,16 @@ if (x == true) {
 /*------------------------------------------------------------------------------*/
 /*hoisting*/ 
 
-console.log(fun()) # this will console.log the function of fun despite function being below it
+console.log(fun()) // this will console.log the function of fun despite function being below it
 
 x = 3
 
 if (x < 2 ) {
-  console.log( this code exists to demonstrate that hoisting skips past it to find the function before returning to the top);
+  console.log("this code exists to demonstrate that hoisting skips past it to find the function before returning to the top");
 }
 
 const fun = () => {
-  console.log(I am having fun)
+  console.log("I am having fun")
 }
 
 ```
@@ -142,9 +142,11 @@ const fun = () => {
 
 ## Q8 |Explain  strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.type coercion, using examples from the JavaScript programming language.
 Type Coercion comes in many types in Javascript, but before I discuss how I need to state what types can be coerced. Primative data types are any data type in Javacript that is not an object this includes; strings, numbers, booleans(true/false), null, undefined and symbols. I will also discuss Objects, a datatype made up of having other datatypes in it and having the [] square brackets or {} curly brackets.</br>
-Type Coercion in Javascript happens in 1 of 3 ways when it is done in the language, type coercion will coerce whatever the datatype is into either; a string, a number or a boolean datatype. This is important to know as if you coerce from any data type you will get a string(words), a number or a boolean(true/false). Type coercion is also done explicitly or implicitly. Explicit type coercion is the use Javascript in built objects to do the coercion for you, an example being we take a value called (val) and we write the inbuilt JS objects Number, Boolean or String. Number(val) would convert the data type explicitly into a number, if the value is a boolean true or false it becomes either a 1 or 0, if its a string the coereced value becomes a NaN or Not A Number(which despite the name is infact a number), if the value was a number in a string '16' then the value will become a number data type.<br> Boolean coercion is easier to understand if (val) is a null, undefined, empty, 0 or false then the Boolean object will return false in its explicit coercion or if its not one of the things I have listed it will return true.<br> The last explicit conversion is the String object, this will convert the (val) into whatever it was but with quotation marks around it, '1', 'true', 'false'.</br>
-Implicit conversion is when you use the inbuilt operators of certain data types(such as +, - , &&, || ) aswell as the == sign to coerce data. These operators allow us to do implicit conversion between datatypes within the Javascipt code for example; adding a string(RayMysterio) and a number(619) together coerces the number into a string creating "RayMysterio619" , you can take away a string(althought it must be a number within the string) from a number or a number from a string in both cases it implicitly converts the string into a number value.<br> The operators && or || to compare two or more operators with && only giving a response true if both sides of the operator are true, the || or 'or' operator will look if either of the object's is a true value and return true if it is. These operators use similar and in some cases the exact same amount logic as stated in Boolean explicit conversion. Using the operators causes the value to get passed into a form that works with the operator and then conducting the logic on it. Also == compares to data types in a boolean way e.g 'string' == number  would be false because a string isnt inherently a number UNLESS the string is '12' or another number, the == operator will do these implicit conversions if possible before return whether the types are the same type.  </br>
-<br>Finally Objects can be type coerced inside of Javascript but normally isn't done as doing type coercion in the data within an object itself. Hash Objects {} are considered a true boolean value, when its converted to a string it becomes an array stating '[object Object]'. When you try to add to it, it becomes '[object Object]+whatever number you enter'.
+Type Coercion in Javascript happens in 1 of 3 ways when it is done in the language, type coercion will coerce whatever the datatype is into either; a string, a number or a boolean datatype. This is important to know as if you coerce from any data type you will get a string(words), a number or a boolean(true/false). Type coercion is also done explicitly or implicitly. Explicit type coercion is the use Javascript in built objects to do the coercion for you, an example being we take a value called (val) and we write the inbuilt JS objects Number, Boolean or String. Number(val) would convert the data type explicitly into a number, if the value is a boolean true or false it becomes either a 1 or 0, if its a string the coereced value becomes a NaN or Not A Number(which despite the name is infact a number), if the value was a number in a string '16' then the value will become a number data type.<br> Boolean coercion is easier to understand if (val) is a null, undefined, empty, 0 or false then the Boolean object will return false in its explicit coercion or if its not one of the things I have listed it will return true.<br>
+The last explicit conversion is the String object, this will convert the (val) into whatever it was but with quotation marks around it, '1', 'true', 'false'.</br>
+Implicit conversion is when you use the inbuilt operators of certain data types(such as +, - , &&, || ) aswell as the == sign to coerce data. These operators allow us to do implicit conversion between datatypes within the Javascipt code for example; adding a string(RayMysterio) and a number(619) together coerces the number into a string creating "RayMysterio619" , you can take away a string(althought it must be a number within the string) from a number or a number from a string in both cases it implicitly converts the string into a number value.<br>
+The operators && or || to compare two or more operators with && only giving a response true if both sides of the operator are true, the || or 'or' operator will look if either of the object's is a true value and return true if it is. These operators use similar and in some cases the exact same amount logic as stated in Boolean explicit conversion. Using the operators causes the value to get passed into a form that works with the operator and then conducting the logic on it. Also == compares to data types in a boolean way e.g 'string' == number  would be false because a string isnt inherently a number UNLESS the string is '12' or another number, the == operator will do these implicit conversions if possible before return whether the types are the same type.</br>
+Finally Objects can be type coerced inside of Javascript but normally isn't done as doing type coercion in the data within an object itself. Hash Objects {} are considered a true boolean value, when its converted to a string it becomes an array stating '[object Object]'. When you try to add to it, it becomes '[object Object]+whatever number you enter'.<br>
 Arrays as an object can have operators assigned to them aswell, when you attempt to add a number or string or boolean to an array it becomes a string with the array elements and the number/string/boolean attached to the end. The same goes for explicit conversions of hashes and arrays. It will return true for Boolean(arrays), String will return a string of the array and NaN for number and the same responses as stated above for hashes.
 ```js 
     '10' + 10 = '1010'
@@ -248,7 +250,7 @@ arr1.concat(7) /*= [0,1,2,3,4,5,6,7]*/
 console.log(arr1)/* = [0,1,2,3,4,5,6]*/
 arr1.pop() /*= [0,1,2,3,4,5] /*(returns 6) */
 arr1.shift() /*= [1,2,3,4,5] /*(returns 0)*/
-arr1.splice(1, 0, 1) /*= [1,1,2,3,4,5] 
+arr1.splice(1, 0, 1) /*= [1,1,2,3,4,5] */
 arr1.splice(1,1) /*= [1,2,3,4,5] (returns (1)*/
 arr1.slice(1,1) = /*[1,3,4,5] (returns 2)*/
 console.log(arr1) /*= [1,2,3,4,5] (slice doesnt mutate)*/
