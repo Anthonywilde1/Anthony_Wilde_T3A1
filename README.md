@@ -31,9 +31,18 @@ The imporant aspects are; <u><strong>Usability</u></strong>, <u><strong>Modifiab
 ---
 
 ## Q3 |Outline a standard high level structure for a MERN stack application and explain the components.
-
+Mongo DB, Express, React, Node, 
+A standard MERN stack application will have the following applications within them; Mongo DB, Express, React and Node. These applications are divided between the front-end of the app (as in the applications that are centered around the viewing/user interface creation on the site) and the back-end (Mongo DB, Express and Node) these all communicate/cooperate to create a dynamic and functional application.</br>
+Mongo DB is the database used in a Javascript MERN stack, SQL databases can't be used within Javascript which makes Mongo viable. Mongo DB features non relational databases that are made with JSON (perfect for Javascript based web apps), Mongo databases collects data into JSON filed marked as a 'document' which can belong to a larger group known as a collection. These documents become BSON or a binary version of a JSON file and these binary files have a maximum storage of 16 megabytes. </br>
+Express is the next part of the Acronym that is also part of the back-end, Express is the Controller part of the Model View Controller (MVC) of the MERN stack, the model is the Mongo DB and the Express apps job is to create a connection between the database and the View, Express allows us to create 'quick' routes and logic that communicates front end and back end. Express is responsible specifically for things like routing on the web browser and for ensuring that any data being parsed through from a BSON or JSON from Mongo is not remaining in those formats and instead a non programming language (aka English).</br>
+React is the View part of the MVC amd the R in the MERN stack, React allows for the creation of front-end views that will communicate with the controller and through the controller the database. React is great in that it allows for Dynamic views, views that update the page without refreshing the whole page. Created by Facebook, it also allows for easy to create web pages that can implement complex UI's within a front end of a web application. React requires an ability and understanding of the DOM, Document Object Model but once known allows for major creativitity.</br>
+Finally Node is the last part of the MERN stack. Node is an open source server environment that does just that. It runs a server that is run in Javascript. Making it the on off button for your MERN stack. Node also is a package manager or NPM that is what we use to install the rest of the MERN stack.</br>
+Finally componnents are independent parts of Javascript code that can be added to the main pillars of the MERN stack. There is far too many components created for Express and React to begin listing them but it is safe to assume that there is probably a component/package for what you desire to do with your own MERN stack, they can be seemlessly integrated within the application.      
 #### [Sources]---
-1. [label](link)
+1. [React](https://reactjs.org/)
+2. [Mongo](https://www.mongodb.com/)
+3. [Express](https://expressjs.com/)
+4. [Node](https://nodejs.org/en/)
 ---
 
 ## Q4 |A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project? 
